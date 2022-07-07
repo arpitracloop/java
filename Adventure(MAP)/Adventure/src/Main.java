@@ -17,27 +17,22 @@ public class Main
 
         locations.get(1).addExit("A",3);
         locations.get(1).addExit("D",2);
-        //locations.get(1).addExit("Q",0);
 
-        //locations.get(2).addExit("Q",0);
         locations.get(2).addExit("A",3);
         locations.get(2).addExit("D",1);
 
         locations.get(3).addExit("A",2);
         locations.get(3).addExit("D",1);
-        //locations.get(3).addExit("Q",0);
         locations.get(3).addExit("S",5);
 
         locations.get(4).addExit("A",1);
         locations.get(4).addExit("A",3);
-        //locations.get(4).addExit("Q",0);
         locations.get(4).addExit("S",5);
 
         locations.get(5).addExit("W",4);
         locations.get(5).addExit("A",3);
         locations.get(5).addExit("S",1);
         locations.get(5).addExit("D",2);
-        //locations.get(5).addExit("Q",0);
 
 
 
