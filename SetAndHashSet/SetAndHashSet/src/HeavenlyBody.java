@@ -42,10 +42,7 @@ public class HeavenlyBody
 
         String objName = ((HeavenlyBody) o).getName();
         return this.name.equals(objName);
-
-//        HeavenlyBody that = (HeavenlyBody) o;
-//        return Double.compare(that.orbitalPeriod, orbitalPeriod) == 0 && Objects.equals(name, that.name) && Objects.equals(satellites, that.satellites);
-        }
+ }
 
     @Override
     public int hashCode() {
