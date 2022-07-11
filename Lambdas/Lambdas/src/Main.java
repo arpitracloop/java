@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -22,12 +21,15 @@ public class Main {
         employees.add(harry);
         employees.add(jack);
 
-        Collections.sort(employees, new Comparator<Employee>() {
-            @Override
-            public int compare(Employee employee1, Employee employee2) {
-                return employee1.getName().compareTo(employee2.getName());
-            }
-        });
+//        Collections.sort(employees, new Comparator<Employee>() {
+//            @Override
+//            public int compare(Employee employee1, Employee employee2) {
+//                return employee1.getName().compareTo(employee2.getName());
+//            }
+//        });
+
+        Collections.sort(employees,(Employee employee1, Employee employee2)->
+                employee1.getName().compareTo(employee2.getName()));
 
         for(Employee employee:employees)
         {
