@@ -3,11 +3,11 @@ public class StockItems extends StockList implements Comparable<StockItems>{
     private double price;
     private int quantityStock = 0;
 
-//    public StockItems(String name, double price) {
-//        this.name = name;
-//        this.price = price;
-//        this.quantityStock = 0;
-//    }
+    public StockItems(String name, double price) {
+        this.name = name;
+        this.price = price;
+        this.quantityStock = 0;
+    }
 
     public String getName() {
         return name;
