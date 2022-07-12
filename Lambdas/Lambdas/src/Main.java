@@ -5,21 +5,23 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        new Thread(()->{
-            System.out.println("Printing from the Runnable");
-            //System.out.format("Printing line %d from Runnable",2);
-
-
-        }).start();
+//        new Thread(()->{
+//            System.out.println("Printing from the Runnable");
+//            //System.out.format("Printing line %d from Runnable",2);
+//
+//
+//        }).start();
 
         Employee john = new Employee("John",22);
         Employee harry = new Employee("Harry",21);
         Employee jack = new Employee("Jack",23);
+        Employee don = new Employee("Don",25);
 
         List<Employee> employees = new ArrayList<>();
         employees.add(john);
         employees.add(harry);
         employees.add(jack);
+        employees.add(don);
 
 //        Collections.sort(employees, new Comparator<Employee>() {
 //            @Override
@@ -28,16 +30,35 @@ public class Main {
 //            }
 //        });
 
-        Collections.sort(employees,(Employee employee1, Employee employee2)->
+        Collections.sort(employees,( employee1,  employee2)->
                 employee1.getName().compareTo(employee2.getName()));
 
         for(Employee employee:employees)
         {
             System.out.println(employee.getName());
         }
+//
+//        String sillyString = doStringStuff(new UpperConcat() {
+//            @Override
+//            public String upperAndConcat(String s1, String s2) {
+//                return s1.toUpperCase()+s2.toUpperCase();
+//            }
+//        },
+//        employees.get(0).getName(),employees.get(1).getName());
+//        System.out.println(sillyString);
 
+        UpperConcat uc = ( s1, s2) -> s1.toUpperCase() + s2.toUpperCase();
+        uc = ( s3, s4) -> s3.toUpperCase() + s4.toUpperCase();
 
+        String sillyString = doStringStuff(uc, employees.get(0).getName(), employees.get(1).getName());
+        System.out.println(sillyString);
 
+        sillyString = doStringStuff(uc, employees.get(2).getName(), employees.get(3).getName());
+        System.out.println(sillyString);
+    }
+    public final static  String doStringStuff(UpperConcat uc,String s1, String s2)
+    {
+        return uc.upperAndConcat(s1,s2);
     }
 }
 
@@ -73,6 +94,11 @@ class Employee
     {
         this.age = age;
     }
+}
+
+interface UpperConcat
+{
+    public String upperAndConcat(String s1, String s2);
 }
 
 
