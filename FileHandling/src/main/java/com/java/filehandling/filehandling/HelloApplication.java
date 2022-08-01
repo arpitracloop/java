@@ -38,7 +38,7 @@ public class HelloApplication
             System.out.println("Error occured while creating file");
         }
 
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(file)))
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(file,true)))
         {
             bw.write("Hello Arpit");
             bw.write("Welcome");
