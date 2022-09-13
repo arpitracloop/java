@@ -14,8 +14,16 @@ public class LambdaExample {
 //		Thread t = new Thread(()-> System.out.println("In lambda thread method"));
 //		t.start();
 
-		FunctionalInterface functionalInterface = ()-> System.out.println("Hello from functional interface");
-		functionalInterface.myMethod();
+//		FunctionalInterface functionalInterface = ()-> System.out.println("Hello from functional interface");
+//		functionalInterface.myMethod();
+//
+//        Integer x = 100;
+
+        onTheFly(()-> System.out.println("Hello from onTheFlyMethof"));
 	}
 
+    public static void onTheFly(FunctionalInterface fun)
+    {
+        fun.myMethod();
+    }
 }
